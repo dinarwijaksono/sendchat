@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class Auth_controller extends Controller
@@ -12,6 +13,31 @@ class Auth_controller extends Controller
     {
         return view('Auth/login');
     }
+
+
+    public function loginProcess(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+ 
+            return redirect()->intended('/');
+        }
+ 
+        return back()->with([
+            'loginFailed' => 'Email / password salah.',
+        ]);
+
+    }
+
+
+
+
+
 
 
     public function create()
@@ -37,6 +63,20 @@ class Auth_controller extends Controller
 
                 
     }
+    
+
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+ 
+        $request->session()->invalidate();
+     
+        $request->session()->regenerateToken();
+     
+        return redirect('/Auth/index');
+    }
+    
     
     
 }
