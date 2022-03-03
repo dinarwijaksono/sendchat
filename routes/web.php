@@ -21,4 +21,5 @@ Route::get('/', [Home_controller::class, 'index'] )->middleware('auth');
     Route::get('/Auth/index', [Auth_controller::class, 'index'] )->middleware('guest')->name('login');
 
     Route::get('/Auth/create', [Auth_controller::class, 'create'] )->middleware('guest')->name('login');
+    Route::post('/Auth/create', [Auth_controller::class, 'store'] )->middleware('guest')->name('login');
 /* end Auth__controoler */
