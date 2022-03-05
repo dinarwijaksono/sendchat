@@ -16,8 +16,8 @@ class Home_controller extends Controller
     
     public function index()
     {
-        $data['listContact'] = ListContact::where('user_id', $this->getUser('id') )->get();
-                
+        $data['listContact'] = ListContact::where('userEmail', $this->getUser('email') )->get();
+        
         return view('/Home/index', $data);
     }
 

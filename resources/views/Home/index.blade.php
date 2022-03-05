@@ -44,7 +44,7 @@
 
                 @foreach ($listContact as $contact)
                 <a href="">
-                    <div class="bg-white rounded p-1 mb-1 text-blue-500">damayanti</div>
+                    <div class="bg-white rounded p-1 mb-1 text-blue-500"><?= $contact->user->username ?></div>
                 </a>
                 @endforeach
 
