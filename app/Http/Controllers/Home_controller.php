@@ -10,4 +10,12 @@ class Home_controller extends Controller
     {
         return view('/Home/index');
     }
+
+
+    public function setting()
+    {
+        return view('/Home/setting');
+    }
+    
+    
 }

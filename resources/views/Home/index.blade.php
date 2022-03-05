@@ -12,14 +12,9 @@
 <body class="bg-slate-300">
 
     <nav class="bg-green-500 p-2 grid gap-1 grid-cols-10 text-white">
-        <h1 class="col-span-8 font-bold">sent chat</h1>
+        <h1 class="col-span-9 font-bold"><a href="/">sent chat</a></h1>
 
-        <form action="/Auth/logout" method="post">
-            @csrf
-            <button type="submit" class="block text-red-500 underline">logout</button>
-        </form>
-
-        <a href="" class="block underline">setting</a>
+        <a href="/Home/setting" class="block underline">setting</a>
 
     </nav>
 
@@ -47,30 +42,16 @@
                 <section class="h-96 overflow-y-auto m-1 p-2">
 
                     <div class="bg-slate-300 w-4/5 p-2 mb-2 rounded">
-                        <p>Dinar lagi apa?</p>
+                        <p>Lorem, ipsum dolor?</p>
                         <span class="text-xs block text-right">12:22</span>
                     </div>
 
                     <div class="flex justify-end">
                         <div class="bg-blue-200 w-4/5 p-2 mb-2 rounded">
-                            <p>Lagi mikirin kamu, hehe</p>
+                            <p>Lorem ipsum dolor sit amet consectetur.</p>
                             <span class="text-xs block text-right">12:30</span>
                         </div>
                     </div>
-
-                    <div class="bg-slate-300 w-4/5 p-2 mb-2 rounded">
-                        <p>Dinar lagi apa?</p>
-                        <span class="text-xs block text-right">12:22</span>
-                    </div>
-
-                    <div class="flex justify-end">
-                        <div class="bg-blue-200 w-4/5 p-2 mb-2 rounded">
-                            <p>Lagi mikirin kamu, hehe</p>
-                            <span class="text-xs block text-right">12:30</span>
-                        </div>
-                    </div>
-
-
 
                 </section>
 
