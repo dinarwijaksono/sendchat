@@ -38,44 +38,18 @@
                     <div class="bg-red-500 text-center rounded p-1 mb-1 text-white">Tutup box</div>
                 </a>
 
-                <a id="tAddContact">
+                <a href="/Contact/add">
                     <div class="bg-orange-500 text-center rounded p-1 mb-1 text-white">Tambah kontak</div>
                 </a>
 
+                @foreach ($listContact as $contact)
                 <a href="">
                     <div class="bg-white rounded p-1 mb-1 text-blue-500">damayanti</div>
                 </a>
+                @endforeach
 
-                <a href="">
-                    <div class="bg-white rounded p-1 mb-1 text-blue-500">damayanti</div>
-                </a>
-
-                <a href="">
-                    <div class="bg-white rounded p-1 mb-1 text-blue-500">damayanti</div>
-                </a>
             </section>
             <!-- end list kontak -->
-
-            <!-- tambah kontak -->
-            <section id="boxAddContact"
-                class="bg-blue-300 hidden absolute top-3 left-3 right-3 shadow-lg rounded overflow-y-auto p-2">
-
-                <a id="xBoxAddContact">
-                    <div class="bg-red-500 text-center rounded p-1 mb-1 text-white">Tutup box</div>
-                </a>
-
-                <form action="" method="post">
-                    @csrf
-                    <div class="mb-2">
-                        <input type="email" class="w-full border-2 p-1 px-2 border-orange-500" placeholder="Email">
-                    </div>
-
-                    <button type="submit"
-                        class="bg-orange-500 text-white w-full p-2 rounded text-center">Tambah</button>
-                </form>
-
-            </section>
-            <!-- end tambah kontak -->
 
             <a id="tChat" class="absolute bottom-5 right-5 bg-orange-500 text-center p-2 text-white rounded">Chat</a>
 
@@ -125,27 +99,15 @@
     <script>
     let listKontak = document.getElementById('listKontak');
     let tChat = document.getElementById('tChat');
-    let tAddContact = document.getElementById('tAddContact');
-    let boxAddContact = document.getElementById('boxAddContact');
     let xListContact = document.getElementById('xListContact');
-    let xBoxAddContact = document.getElementById('xBoxAddContact');
 
 
     tChat.addEventListener('click', function() {
         listKontak.classList.toggle('hidden')
     })
 
-    tAddContact.addEventListener('click', function() {
-        listKontak.classList.toggle('hidden')
-        boxAddContact.classList.toggle('hidden')
-    })
-
     xListContact.addEventListener('click', function() {
         listKontak.classList.toggle('hidden')
-    })
-
-    xBoxAddContact.addEventListener('click', function() {
-        boxAddContact.classList.toggle('hidden');
     })
     </script>
 

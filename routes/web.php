@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth_controller;
 use App\Http\Controllers\Home_controller;
+use App\Http\Controllers\Contact_controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,13 @@ use Illuminate\Support\Facades\Route;
 
 /* Home_controller */
     Route::get('/', [Home_controller::class, 'index'] )->middleware('auth');
+    Route::get('/Home/index', [Home_controller::class, 'index'] )->middleware('auth');
 
     Route::get('/Home/setting', [Home_controller::class, 'setting'] )->middleware('auth');
 
 /* end Home_controller */
+    
+/* Contact_controller */
+    Route::get('/Contact/add', [Contact_controller::class , 'add'] )->middleware('auth');
+    Route::post('/Contact/add', [Contact_controller::class , 'store'] )->middleware('auth');
+/* end Contact_controller */
